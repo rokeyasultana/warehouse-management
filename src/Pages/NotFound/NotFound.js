@@ -7,7 +7,7 @@ const NotFound = () => {
            <h3 className='text-5xl text-center text-secondary mt-5'>404</h3></div> 
 
 <div  className='mt-7 mb-7'>
-    <img style={{width:"500px"}} className='mx-auto rounded ' src="https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg" alt="" />
+    <img style={{width:"500px"}} className='rounded mx-auto d-block  ' src="https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg" alt="" />
 </div>
 
         </div>
