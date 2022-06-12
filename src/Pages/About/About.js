@@ -2,6 +2,7 @@ import React from 'react';
 import bg2 from '../../Assests/images/bg2.jpg'
 
 const About = () => {
+
     return (
         <div class="mt-7 mb-7 hero min-h-screen"
         style={{background: `url(${bg2})`}} 
