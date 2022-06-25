@@ -14,7 +14,20 @@ const Navbar = () => {
       <li><Link to="/review">Review</Link></li>
       <li><Link to="/blogs">Blogs</Link></li>
       <li><Link to="/about">About</Link></li>
+      { 
+    user && <>
+   <li><Link to="/manageItems"> Manage-Items </Link></li>
+   <li><Link to="/addItems"> Add-Items </Link></li>
+   <li> <Link to="/myItems"> My-Items </Link></li>
+                                    
+ </>
+   }
+
+
       <li>{user ?  <button onClick={logout} class="btn btn-ghost">Sign out</button> :<Link to="/login">Login</Link>}</li>
+      
+  
+
   </>
   return (
       <div className="navbar bg-primary text-secondary   ">

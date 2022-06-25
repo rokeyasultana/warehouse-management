@@ -7,7 +7,7 @@ const Product = ({product}) => {
 
     const navigate = useNavigate();
 
-    const navigateToProductDetails = id =>{
+    const navigateToProductDetails = id => {
 
 navigate(`/product/${id}`);
 

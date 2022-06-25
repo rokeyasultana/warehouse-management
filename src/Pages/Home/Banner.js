@@ -1,5 +1,6 @@
 import React from 'react';
 import bg1 from '../../Assests/images/bg1.png'
+import './Banner.css'
 
 const Banner = () => {
     return (
@@ -10,11 +11,11 @@ const Banner = () => {
         className=' grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mb-5  justify-center items-center bg-primary'>
             <div >
 
-<img className=''  src={bg1} alt="" />
+<img  src={bg1} alt="" />
             </div>
              <div >
                 <h1 className='text-5xl text-secondary font-sans hover:font-serif italic'>Essences<br></br> of Life</h1>
-                <p className='text-secondary text-xl mt-2 '>One of the most obvious benefits of wearing perfume is that it neutralizes body odors and keeps us smelling fresh all day. It also helps to boost our confidence. Knowing that we smell good can be incredibly reassuring.</p>
+                <p id='banner' className='text-secondary text-xl mt-2 '>One of the most obvious benefits of wearing perfume is that <br></br> it neutralizes body odors and keeps us smelling fresh all day.<br></br> It also helps to boost our confidence. Knowing that we smell<br></br> good can be incredibly reassuring.</p>
             </div>
             
            

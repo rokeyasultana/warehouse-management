@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Product from './Product';
 
-const Products = () => {
+const Products = () => { 
+    
 const[products,setProducts]=useState([]);
 
 useEffect(()=>{
-    fetch('http://localhost:5000/product')
+    fetch('https://calm-plains-85467.herokuapp.com/product')
     .then(res=>res.json())
     .then(data => setProducts(data));
 },[]);
@@ -21,6 +23,9 @@ useEffect(()=>{
 
                    ></Product>).slice(0,6)
                 }
+            </div>
+            <div className='mx-auto d-block w-50 mt-5'>
+                <Link to="/manageItems"><button className='btn btn-outline btn-secondary '>Manage Books</button> </Link>
             </div>
         </div>
     );

@@ -1,0 +1,16 @@
+#banner{
+    justify-content: center;
+    justify-items: center;
+    font-family: cursive;
+    overflow: hidden;
+    border-right: .15em solid rgb(246, 12, 51);
+    white-space: nowrap;
+    animation: 
+      typing 5s forwards;
+    font-size:15px;
+    width: 0;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
