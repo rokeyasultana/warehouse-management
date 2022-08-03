@@ -11,14 +11,14 @@ const Carousel = () => {
    
   </div>
 <img 
-   src="https://us.123rf.com/450wm/belchonock/belchonock1804/belchonock180435342/99215081-handsome-man-with-bottle-of-perfume-on-dark-background-closeup.jpg?ver=6" alt="Shoes" />
+   src="https://us.123rf.com/450wm/belchonock/belchonock1804/belchonock180435342/99215081-handsome-man-with-bottle-of-perfume-on-dark-background-closeup.jpg?ver=6" alt="" />
 </div>
         
     <div class="card w-96 shadow-xl  mt-8 mb-8">
   <div class="card-body">
    
   </div>
-<img src="https://t3.ftcdn.net/jpg/04/17/62/34/360_F_417623472_n6ZpDDeXszgr1H3VzsuT5PtAzyXRUSY8.jpg" alt="Shoes" />
+<img src="https://t3.ftcdn.net/jpg/04/17/62/34/360_F_417623472_n6ZpDDeXszgr1H3VzsuT5PtAzyXRUSY8.jpg" alt="" />
 </div>
   </div>
         

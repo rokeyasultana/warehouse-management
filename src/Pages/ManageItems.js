@@ -3,12 +3,13 @@ import { faTrashCan} from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useProduct from '../hooks/useProduct';
-
+import { Table, Thead, Tbody } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 const ManageItems = () => {
 
     const [products,setProducts] = useProduct();
 
-    const navigate =useNavigate();
+    const navigate = useNavigate();
     const navigateToProductDetails = id => {
 
         navigate(`/product/${id}`);
@@ -31,38 +32,47 @@ const ManageItems = () => {
         }
     }
     return (
-        <div className=' w-50 mx-auto  text-black'>
+        <div className='   text-black'>
 
 
-<div class="justify-center justify-items-center overflow-x-auto mt-5 mb-8">
-  <table class="justify-center justify-items-center table table-zebra ">
+<div class=" mt-5 mb-8">
+<div class="justify-center justify-items-center text-secondary bg-primary shadow-xl">
+  <div class=" overflow-x-auto 
+  ">
+  
 
-    <thead>
-    <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
-                    <th>Update products</th>
+    <Table>
+      <Thead>
+      <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+                <th>Update products</th>
 
-                </tr>
-    </thead>
-    <tbody>
+            </tr>
+      </Thead>
+      <Tbody>
+      {products.map(product => {
+                return (
+                    <tr key={product._id}>
+                        <td>{product.name}</td>
+                        <td>{product.price}</td>
+                        <td>{product.quantity}</td>
+                        <td>{<button onClick={() => handleDelete(product._id)}>  <FontAwesomeIcon icon={faTrashCan} /></button>}</td>
+                        <td >{<button  onClick={() => navigateToProductDetails(product._id)} className="btn btn-outline btn-secondary mt-1 mb-1" >Update</button>}</td>
+
+                    </tr>
+                )
+            })}
+      </Tbody>
+    </Table>
+
+  
+  </div>
+</div>
  
-    {products.map(product => {
-                    return (
-                        <tr key={product._id}>
-                            <td>{product.name}</td>
-                            <td>{product.price}</td>
-                            <td>{product.quantity}</td>
-                            <td>{<button onClick={() => handleDelete(product._id)}>  <FontAwesomeIcon icon={faTrashCan} /></button>}</td>
-                            <td>{<button onClick={() => navigateToProductDetails(product._id)} className="btn btn-outline-dark ">Update</button>}</td>
-
-                        </tr>
-                    )
-                })}
-    </tbody>
-  </table>
+ 
 </div>
 
             

@@ -28,9 +28,9 @@ const AddItems = () => {
             })
     };
     return (
-        <div className='justify-center justify-items-center ml-10 w-50 mx-auto mt-5 mb-5 '>
+        <div className=' ml-10 w-50  mt-5 mb-5 '>
         
-        <div class="  card w-96 bg-base-100 shadow-xl ">
+        <div class="flex mx-auto  card w-96 bg-base-100 shadow-xl ">
   <div class="card-body">
   <h2 className='text-center text-secondary text-3xl mb-5'>Please add a Items</h2>
 

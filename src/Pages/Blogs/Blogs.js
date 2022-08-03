@@ -13,7 +13,7 @@ const Blogs = () => {
   
   <div class="card-body">
     <h2 class="card-title">Difference between javascript and nodejs</h2>
-    <p className='font-bold'> * JavaScript is a lightweight object oriented scripting language. Nodejs is not a language. It is a cross-platform, open-source, server side runtime environment.<br></br>
+    <p > * JavaScript is a lightweight object oriented scripting language. Nodejs is not a language. It is a cross-platform, open-source, server side runtime environment.<br></br>
 
 * Javascript is used to build dynamic HTML pages with interactive effects on a webpage, mobile Application, Games, and Server Application etc. NodeJs facilities JavaScript to be run on a server.<br></br>
 

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetails = () => {
 
@@ -24,67 +27,58 @@ const ProductDetails = () => {
 
     const handleDelivered = () => {
 
-      console.log(quantity);
-
-      if (quantity > 0) {
-
-          const newQuantity = quantity - 1;
-          const deliveredQuantity = {  newQuantity}
-
-          const url =  `https://calm-plains-85467.herokuapp.com/product/${productId}`;
-
-          fetch(url, {
-              method: 'PUT',
-              headers: {
-                  'content-type': 'application/json'
-              },
-              body: JSON.stringify(deliveredQuantity)
-          })
-              .then(res => res.json())
-              .then(data => console.log(data))
-
+      product.quantity = parseInt(product.quantity) - 1;
+      if (product.quantity < 0) {
+          toast('Out of Stock !')
+          return;
       }
-      else {
-          alert('Out of Stock')
-      }
-  }
 
-  const getInputValue = (event) => {
-    const userValue = event.target.value;
-    setUserQuantity(userValue)
-    
+ 
+else{
+  fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`, {
+    method: 'PUT',
+    headers: {
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify(product)
+})
+    .then(res => res.json())
+    .then(result => {
+        fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`)
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    })
+
 }
-
-const handleQuantity = (event) => {
-  if (userQuantity && userQuantity > 0) {
-      const newQuantity = parseInt(quantity) + parseInt(userQuantity);
-      const setQuantity = { newQuantity }
-      const url = `https://calm-plains-85467.herokuapp.com/product/${productId}`;
-
-      fetch(url, {
-          method: 'PUT',
-          headers: {
-              'content-type': 'application/json'
-          },
-          body: JSON.stringify(setQuantity)
-      })
-          .then(res => res.json())
-          .then(data => console.log(data))
-
-
-  }
-  else {
-      alert('Please given a valid input')
-  }
-  event.target.reset();
 }
+     
+const handleQuantity=(event  =>{
+  event.preventDefault();
+        const productQuantity = event.target.quantity.value;
 
+        product.quantity = parseInt(product.quantity) + parseInt(productQuantity);
+
+        fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(result => {
+                fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`)
+                    .then(res => res.json())
+                    .then(data => setProduct(data))
+            })
+        event.target.reset();
+})
 
 
    
 
     return (
-      <div  className='flex  justify-center items-center mt-5 mb-9'>
+      <div  className='flex mx-auto  justify-center items-center mt-5 mb-9'>
           <div class="mt-5 mb-8 card w-96 bg-secondary shadow-xl">
         <figure class="px-10 pt-10">
           <img src={product.img} alt="Shoes" class="rounded-xl" />
@@ -98,18 +92,21 @@ const handleQuantity = (event) => {
           <button id='item-btn' className="btn btn-outline-dark text-center " onClick={handleDelivered}>Delivered</button>
 
           <div className='mt-5'>
-<form>
 
- <input type="text" className='mb-2' onChange = {getInputValue} placeholder='Restock Quantity' />
+
+<form onSubmit={handleQuantity}>
+
+ <input type="text" className='mb-2'  placeholder='Restock Quantity' />
                             <br />
-                            <button  type="button" value="Restock" />
-                            <button className='btn btn-outline btn-primary '  onClick={handleQuantity} >Restock</button>
+                            <button  type="submit" value="Restock" />
+                            <button className='btn btn-outline btn-primary '   >Restock</button>
     
 
 </form>
 </div>
         </div>
-      </div>  
+      </div> 
+      <ToastContainer /> 
       </div>
     );
 };

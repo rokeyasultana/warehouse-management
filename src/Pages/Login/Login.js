@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import React, { useEffect, useState } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const [email,setEmail] =useState('')
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [
@@ -14,6 +18,8 @@ const Login = () => {
       loading,
       error,
   ] = useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   let signInError;
   const navigate = useNavigate();
@@ -26,7 +32,7 @@ const Login = () => {
       }
   }, [user, gUser, from, navigate])
 
-  if (loading || gLoading) {
+  if (loading || gLoading || sending) {
       return <Loading></Loading>
   }
 
@@ -37,6 +43,17 @@ const Login = () => {
   const onSubmit = data => {
       signInWithEmailAndPassword(data.email, data.password);
   }
+
+  const resetPassword = async () => {
+
+    if (email) {
+        await sendPasswordResetEmail(email);
+        toast('Sent email');
+    }
+    else{
+        toast('please enter your email address');
+    }
+}
 
   return (
       <div className='flex h-screen justify-center items-center'>
@@ -97,8 +114,9 @@ const Login = () => {
                       {signInError}
                       <input class="btn btn-outline btn-secondary w-full max-w-xs"type="submit" value="Login" />
                   </form>
-                  <p>New to Essences of Life ? <br></br>
-                       <Link className='text-secondary' to="/signup">Create New Account</Link></p>
+                  <p>New to Essences of Life ? <span> <Link className='text-secondary' to="/signup">Create New Account</Link></span></p>
+
+                  <p>Forget Password?<span><button className='btn btn-link text-secondary pe-auto text-decoration-none'onClick={resetPassword}>Reset Password</button></span> </p>
                   <div className="divider">OR</div>
                   <button
                       onClick={() => signInWithGoogle()}
@@ -106,7 +124,7 @@ const Login = () => {
                   >Continue with Google</button>
               </div>
           </div>
-          
+          <ToastContainer />
       </div >
   );
 };
