@@ -11,5 +11,5 @@ Essences For Life. This website is about perfume. Here is stock about  different
 * firebase authentication
 * Mongodb for data load
 
-### Live site :
+### Live site : https://frabjous-entremet-b2b3c8.netlify.app/
 
