@@ -1,5 +1,5 @@
 # Website name 
-Essences For Life 
+Essences For Life. This website is about perfume. Here is stock about  different brands of perfume. You can oder perfume.
 
 
 
