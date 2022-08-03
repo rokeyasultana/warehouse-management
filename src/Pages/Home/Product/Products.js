@@ -25,7 +25,7 @@ useEffect(()=>{
                 }
             </div>
             <div className='mx-auto d-block w-50 mt-5'>
-                <Link to="/manageItems"><button className='btn btn-outline btn-secondary '>Manage Books</button> </Link>
+                <Link to="/manageItems"><button className='btn btn-outline btn-secondary '>Manage products</button> </Link>
             </div>
         </div>
     );
