@@ -10,7 +10,7 @@ import ManageItems from './Pages/ManageItems';
 import AddItems from './Pages/AddItems';
 import NotFound from './Pages/NotFound/NotFound';
 import ProductDetails from './Pages/ProductDetails';
-import Review from './Pages/Reviews/Review';
+
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import MyItems from './Pages/MyItems';

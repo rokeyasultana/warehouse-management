@@ -44,7 +44,7 @@ navigate('/')
 
   };
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div data-aos="fade-up" data-aos-duration="1500" className='flex h-screen justify-center items-center'>
         <div class="card w-96 bg-base-100 shadow-xl">
 <div class="card-body">
 

@@ -114,7 +114,7 @@ const Login = () => {
                       {signInError}
                       <input class="btn btn-outline btn-secondary w-full max-w-xs"type="submit" value="Login" />
                   </form>
-                  <p>New to Essences of Life ? <span> <Link className='text-secondary' to="/signup">Create New Account</Link></span></p>
+                  <p>New to Essences of Life ?<span> <Link className='text-secondary' to="/signup">Create New Account</Link></span></p>
 
                   <p>Forget Password?<span><button className='btn btn-link text-secondary pe-auto text-decoration-none'onClick={resetPassword}>Reset Password</button></span> </p>
                   <div className="divider">OR</div>
