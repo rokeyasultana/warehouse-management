@@ -12,7 +12,7 @@ const AddItems = () => {
 
     const onSubmit = data => {
         // console.log(data);
-        const url = `https://calm-plains-85467.herokuapp.com/product`;
+        const url = `https://warehouse-management-server-side-gmaw.onrender.com/product`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -28,7 +28,7 @@ const AddItems = () => {
             })
     };
     return (
-        <div className=' ml-10 w-50  mt-5 mb-5 '>
+        <div data-aos="fade-up" data-aos-duration="1500" className=' ml-10 w-50  mt-5 mb-5 '>
         
         <div class="flex mx-auto  card w-96 bg-base-100 shadow-xl ">
   <div class="card-body">

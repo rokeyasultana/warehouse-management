@@ -3,7 +3,7 @@ import './Carousel.css'
 
 const Carousel = () => {
     return (
-        <div class="justify-center justify-items-center   " >
+        <div  data-aos="fade-up" data-aos-duration="1900" class="justify-center justify-items-center   " >
  <h2 id='title'  className='text-5xl text-secondary'> For Man & Women.....</h2>
   <div className='justify-center justify-items-center carousel rounded-box'>
   <div class="card w-96 shadow-xl mb-5">

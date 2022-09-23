@@ -19,7 +19,7 @@ const ManageItems = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://calm-plains-85467.herokuapp.com/product/${id}`;
+            const url = `https://warehouse-management-server-side-gmaw.onrender.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

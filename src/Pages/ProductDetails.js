@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -6,106 +6,106 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const ProductDetails = () => {
 
-  const [userQuantity, setUserQuantity] = useState(null);
+  const valueRef = useRef(0);
+   const{productId} = useParams();
 
-    const{productId} = useParams();
-    
     const[product,setProduct] = useState({});
-    
-    
+
+    const { _id, catagory, name, supplier, price, quantity, img } = product;
+ 
+    const updatedQuantity = parseInt(quantity) || 0;
 
     useEffect(() => {
-      const url = `https://calm-plains-85467.herokuapp.com/product/${productId}`;
-        console.log(url);
-
+      const url = `https://warehouse-management-server-side-gmaw.onrender.com/product/${productId}`;
+        // console.log(url);
         fetch(url)
         .then(res=> res.json())
         .then(data => setProduct(data));
-    }, [product]);
+    }, [productId,product]);
 
-    const quantity = parseInt(product.quantity);
+    
 
     const handleDelivered = () => {
-
-      product.quantity = parseInt(product.quantity) - 1;
-      if (product.quantity < 0) {
-          toast('Out of Stock !')
-          return;
-      }
-
- 
-else{
-  fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`, {
-    method: 'PUT',
-    headers: {
-        'content-type': 'application/json'
-    },
-    body: JSON.stringify(product)
+const data = updatedQuantity - 1 ;
+const url = `https://warehouse-management-server-side-gmaw.onrender.com/product/${productId}`;
+fetch(url,{
+  method: "PUT",
+  headers:{
+    "COntent-type": "application/json",
+  },
+  body: JSON.stringify({
+    quantity:data,
+  })
 })
-    .then(res => res.json())
-    .then(result => {
-        fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`)
-            .then(res => res.json())
-            .then(data => setProduct(data))
-    })
-
-}
-}
+.then((response) => response.json())
+      .then((data) => {
+        setProduct(data);
+        toast.success("Delivery Successfully!");
+      });
+  };
      
-const handleQuantity=(event  =>{
-  event.preventDefault();
-        const productQuantity = event.target.quantity.value;
+  const handleReStock = () => {
+    const value = parseInt(valueRef.current.value) + updatedQuantity;
+    const url = `https://warehouse-management-server-side-gmaw.onrender.com/product/${productId}`;
+    if (value) {
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          quantity: value,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setProduct(data);
 
-        product.quantity = parseInt(product.quantity) + parseInt(productQuantity);
-
-        fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(product)
-        })
-            .then(res => res.json())
-            .then(result => {
-                fetch(`https://calm-plains-85467.herokuapp.com/product/${productId}`)
-                    .then(res => res.json())
-                    .then(data => setProduct(data))
-            })
-        event.target.reset();
-})
-
+          toast.success("Restock Successfully!");
+        });
+    }
+  };
+     
 
    
 
     return (
-      <div  className='flex mx-auto  justify-center items-center mt-5 mb-9'>
-          <div class="mt-5 mb-8 card w-96 bg-secondary shadow-xl">
-        <figure class="px-10 pt-10">
-          <img src={product.img} alt="Shoes" class="rounded-xl" />
-        </figure>
-        <div class="card-body items-center text-center">
-          <h2 class="card-title">{product.name}</h2>
-          <p>{product.description}</p>
+      <div  className='flex mx-auto  justify-center items-center mt-5 mb-9 text-white'>
+
+<div data-aos="fade-up" data-aos-duration="1500"  class="hero min-h-screen bg-primary ">
+  <div class="hero-content flex-col lg:flex-row">
+    <img src={product.img} class="max-w-sm rounded-lg shadow-2xl" />
+    <div className='text-white'>  
+      <p>{product.description}</p>
           <p>Price: $ {product.price}</p>
           <p>Quantity: {product.quantity}</p>
           <p>Supplier: {product.supplier}</p>
-          <button id='item-btn' className="btn btn-outline-dark text-center " onClick={handleDelivered}>Delivered</button>
-
-          <div className='mt-5'>
-
-
-<form onSubmit={handleQuantity}>
-
- <input type="text" className='mb-2'  placeholder='Restock Quantity' />
-                            <br />
-                            <button  type="submit" value="Restock" />
-                            <button className='btn btn-outline btn-primary '   >Restock</button>
-    
-
-</form>
+      <button  
+      disabled={updatedQuantity <= 0 && true}
+      onClick={handleDelivered} class="btn btn-secondary mt-3">Delivered</button>
+      <div data-aos="zoom-in-up" data-aos-duration="1500">
+<input
+            required
+            type="number"
+            ref={valueRef}
+            name="number"
+            id=""
+            className="w-25 mx-auto me-2 rounded-3 border-0 p-1 text-black mt-3"
+          />
+<br></br>
+          <button
+            onClick={handleReStock}
+            className="btn btn-secondary my-2 me-2 "
+          >
+            Restock
+          </button>
 </div>
-        </div>
-      </div> 
+    </div>
+  </div>
+ 
+</div>
+
+
       <ToastContainer /> 
       </div>
     );

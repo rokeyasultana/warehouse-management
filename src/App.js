@@ -14,10 +14,10 @@ import Review from './Pages/Reviews/Review';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import MyItems from './Pages/MyItems';
-
+import 'aos/dist/aos.css';
 function App() {
   return (
-    <div className='App'> 
+    <div className='App'   data-aos-mirror='true'> 
       <Navbar></Navbar>
    <Routes>
    <Route path='/' element={<Home/>}></Route>

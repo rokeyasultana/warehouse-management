@@ -5,7 +5,7 @@ const useProduct = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://calm-plains-85467.herokuapp.com/product')
+        fetch('https://warehouse-management-server-side-gmaw.onrender.com/product')
 
             .then(res => res.json())
 
