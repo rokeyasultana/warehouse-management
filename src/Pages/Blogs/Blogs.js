@@ -7,9 +7,9 @@ const Blogs = () => {
         <h2 className='text-center text-secondary font-serif text-5xl mt-5'>FAQ</h2>
       </div>
       
-      <div className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-20 mb-35  gap-4  '>
+      <div className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-20 mb-35  gap-4  text-secondary '>
       <div >
-      <div class="card bg-secondary card-compact w-96 shadow-xl">
+      <div class="card  card-compact w-96 shadow-xl border-2 border-rose-500">
   
   <div class="card-body">
     <h2 class="card-title">Difference between javascript and nodejs</h2>
@@ -24,7 +24,7 @@ const Blogs = () => {
 </div>
       </div>
       <div>
-      <div class="card bg-secondary card-compact w-96 shadow-xl">
+      <div class="card  card-compact w-96 shadow-xl border-2 border-rose-500">
   
   <div class="card-body">
     <h2 class="card-title">Differences between SQL and  NoSQL databases</h2>
@@ -43,7 +43,7 @@ const Blogs = () => {
 </div>
       </div>
       <div>
-      <div class="card bg-secondary card-compact w-96  shadow-xl">
+      <div class="card  card-compact w-96  shadow-xl border-2 border-rose-500">
   
   <div class="card-body">
     <h2 class="card-title">What is the purpose of jwt and how does it work</h2>
