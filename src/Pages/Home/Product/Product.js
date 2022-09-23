@@ -15,8 +15,8 @@ navigate(`/product/${id}`);
 
     return (
         <div className= ' mt-5  mb-5'>
-        <div class=" card w-96 bg-secondary hover:bg-white hover:text-black  shadow-xl items-center">
-  <figure><img src={img}alt="perfume" /></figure>
+        <div  class="  card w-96 bg-secondary hover:bg-white hover:text-black  shadow-xl items-center">
+  <figure><img style={{width:'500px',height:'300px'}}  src={img}alt="perfume" /></figure>
   <div class="card-body ">
     <h2 class="text-center">{name}</h2>
     <p class="text-center">{description}</p>
