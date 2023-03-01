@@ -59,11 +59,11 @@ const MyItems = () => {
    
     
     return (
-        <div className='   text-black'>
+        <div className='text-secondary'>
 
 
-        <div class=" mt-5 mb-8">
-        <div class="justify-center justify-items-center text-secondary bg-primary shadow-xl">
+        <div class=" mt-5 mb-96 ">
+        <div class="justify-center justify-items-center text-secondary bg-primary shadow-xl mb-64 ">
           <div class=" overflow-x-auto 
           ">
           

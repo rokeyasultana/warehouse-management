@@ -30,7 +30,7 @@ const AddItems = () => {
     return (
         <div data-aos="fade-up" data-aos-duration="1500" className=' ml-10 w-50  mt-5 mb-5 '>
         
-        <div class="flex mx-auto  card w-96 bg-base-100 shadow-xl ">
+        <div class="flex mx-auto  card w-96 border-2 border-secondary shadow-xl ">
   <div class="card-body">
   <h2 className='text-center text-secondary text-3xl mb-5'>Please add a Items</h2>
 

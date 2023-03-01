@@ -4,10 +4,8 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <section 
-        style={{
-            background:`url(https://images.unsplash.com/photo-1470690096659-6f59b9b39fd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1198&q=80)`
-        }}
+        <section id='background'
+        
         className=' grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mb-5  justify-center items-center bg-primary'>
             <div >
 

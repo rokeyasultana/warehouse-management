@@ -45,7 +45,7 @@ navigate('/')
   };
     return (
         <div data-aos="fade-up" data-aos-duration="1500" className='flex h-screen justify-center items-center'>
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card w-96 border-2 border-secondary text-secondary shadow-xl">
 <div class="card-body">
 
 <h2 class="text-center text-secondary font-bold text-3xl">Sign up</h2>
@@ -54,7 +54,7 @@ navigate('/')
 
 <div class="form-control w-full max-w-xs">
 <label class="label">
-<span class="label-text">Name</span>
+<span class="label-text text-secondary">Name</span>
 
 </label>
 
@@ -80,7 +80,7 @@ message:'Name is required'
 </div>
 <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-secondary">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -104,7 +104,7 @@ message:'Name is required'
                         </div>
 <div class="form-control w-full max-w-xs">
 <label class="label">
-<span class="label-text">Password</span>
+<span class="label-text text-secondary">Password</span>
 
 </label>
 
@@ -132,14 +132,14 @@ message:'password is required'
 </div>
 
 {errorMessage}
-<button  type='submit' class="btn btn-outline btn-secondary w-full max-w-xs">Sign up</button>
+<button  type='submit' class="btn btn-outline btn-secondary w-full max-w-xs normal-case">Sign up</button>
 </form>
 <p>Already have an account ? <br></br>
-  <Link className='text-secondary' to="/login">Please login</Link></p>
+  <Link className='text-secondary' to="/login">Please sign in</Link></p>
 
 
 <div class="divider">OR</div>
-<button onClick={() => signInWithGoogle()} class="btn btn-outline btn-secondary">Sign in with Google</button>
+<button onClick={() => signInWithGoogle()} class="btn btn-outline btn-secondary normal-case">Sign in with Google</button>
 </div>
 </div>
     </div>

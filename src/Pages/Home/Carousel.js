@@ -23,7 +23,7 @@ const Carousel = () => {
   </div>
         
   <div className='typed-out'> 
-    <h1 className='text-xl text-secondary'>Discovering a perfume is an always surprising adventure. <br></br>But choosing one is a strong commitment as a fragrance says a lot about your personality,<br></br> your mood and your current desires.<br></br> Intrigued, you frequently ask us if our perfumes are for man or woman. <br></br>But why should a fragrance have a gender?<br></br> What leads your nose and your brain to make a difference between a perfume for men and women?<br></br> Discover that this distinction is actually a very recent trend…</h1>
+    <h1 className='text-secondary ml-3 mr-3 text-xl'>Discovering a perfume is an always surprising adventure. <br></br>But choosing one is a strong commitment as a fragrance says a lot<br></br> about your personality,<br></br> your mood and your current desires.<br></br> Intrigued, you frequently ask us if our perfumes are for man or woman. <br></br>But why should a fragrance have a gender?<br></br> What leads your nose and your brain to make a difference between a perfume for men and women?<br></br> Discover that this distinction is actually a very recent trend…</h1>
     </div>
         
         

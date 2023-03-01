@@ -57,14 +57,14 @@ const Login = () => {
 
   return (
       <div data-aos="fade-up" data-aos-duration="1500" className='flex h-screen justify-center items-center'>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-96 border-2 border-secondary text-secondary shadow-xl">
               <div className="card-body">
                   <h2 className="text-center text-2xl font-bold">Login</h2>
                   <form onSubmit={handleSubmit(onSubmit)}>
 
                       <div className="form-control w-full max-w-xs">
                           <label className="label">
-                              <span className="label-text">Email</span>
+                              <span className="label-text text-secondary">Email</span>
                           </label>
                           <input
                               type="email"
@@ -88,7 +88,7 @@ const Login = () => {
                       </div>
                       <div className="form-control w-full max-w-xs">
                           <label className="label">
-                              <span className="label-text">Password</span>
+                              <span className="label-text text-secondary">Password</span>
                           </label>
                           <input
                               type="password"
@@ -112,15 +112,15 @@ const Login = () => {
                       </div>
 
                       {signInError}
-                      <input class="btn btn-outline btn-secondary w-full max-w-xs"type="submit" value="Login" />
+                      <input class="btn btn-outline btn-secondary w-full max-w-xs normal-case"type="submit" value="Sign in" />
                   </form>
-                  <p>New to Essences of Life ?<span> <Link className='text-secondary' to="/signup">Create New Account</Link></span></p>
+                  <p>New to here?<span> <Link className='text-secondary' to="/signup">Create New Account</Link></span></p>
 
-                  <p>Forget Password?<span><button className='btn btn-link text-secondary pe-auto text-decoration-none'onClick={resetPassword}>Reset Password</button></span> </p>
+                  <p>Forget Password?<span><button className='btn btn-link text-secondary pe-auto text-decoration-none normal-case'onClick={resetPassword}>Reset Password</button></span> </p>
                   <div className="divider">OR</div>
                   <button
                       onClick={() => signInWithGoogle()}
-                      class="btn btn-outline btn-secondary w-full max-w-xs"
+                      class="btn btn-outline btn-secondary w-full max-w-xs normal-case"
                   >Continue with Google</button>
               </div>
           </div>

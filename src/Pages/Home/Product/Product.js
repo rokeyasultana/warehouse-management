@@ -15,19 +15,24 @@ navigate(`/product/${id}`);
 
     return (
         <div className= ' mt-5  mb-5'>
-        <div  class="  card w-96 bg-secondary hover:bg-white hover:text-black  shadow-xl items-center">
-  <figure><img style={{width:'500px',height:'300px'}}  src={img}alt="perfume" /></figure>
+        <div  class="  card w-96 h-full text-white hover:bg-white hover:text-black  shadow-xl items-center border-2 border-secondary">
+  <figure><img style={{width:'500px',height:'250px'}}  src={img}alt="perfume" /></figure>
   <div class="card-body ">
-    <h2 class="text-center">{name}</h2>
-    <p class="text-center">{description}</p>
-    <p class="text-center">Price: $ {price}</p>
-    <p class="text-center">Quantity:{quantity}</p>
-    <p class="text-center">Supplier: {supplier}</p>
-    <div class="card-actions justify-end">
+    <h2 class="text-center font-semibold">{name}</h2>
+    {/* <p class="text-center">{description}</p> */}
+  <div className='flex gap-5 '>
+  <div>
+    <p class="text-center">Price: ${price}</p>
+    </div>
+   <div>
+   <p class="text-center">Quantity: {quantity}</p>
+   </div>
+  </div>
+    <p class="text-center ">Supplier: {supplier}</p>
+    <div class="w-full mx-auto">
       <button 
       onClick={()=>navigateToProductDetails(_id)}
-      
-      class="btn btn-primary">Update</button>
+      class="btn btn-outline btn-secondary normal-case">Update</button>
     </div>
   </div>
 </div>
