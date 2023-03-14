@@ -16,8 +16,8 @@ const Brand = () => {
         cssEase: "linear"
       }
       return(
-        <div className='bg-primary  px-12 '>
-          <h2 className='text-7xl text-secondary mb-5 mt-5 font-serif font-light'>Brands</h2>
+        <div className='bg-primary  px-12 mt-28'>
+          <h2 className='text-7xl text-white mb-10 mt-16 font-serif font-light'>Brands</h2>
           <Slider {...settings}>
             <div>
               <img style={{width:'300px'}} src="https://du0l56ab6b371.cloudfront.net/images/thumbs/0000291_diesel.webp" alt="" />

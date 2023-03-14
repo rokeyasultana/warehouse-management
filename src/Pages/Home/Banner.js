@@ -12,8 +12,8 @@ const Banner = () => {
 <img  src={bg1} alt="" />
             </div>
              <div >
-                <h1 className='text-5xl text-secondary font-sans hover:font-serif italic'>Essences<br></br> of Life</h1>
-                <p id='banner' className='text-secondary text-xl mt-2 '>One of the most obvious benefits of wearing perfume is that <br></br> it neutralizes body odors and keeps us smelling fresh all day.<br></br> It also helps to boost our confidence. Knowing that we smell<br></br> good can be incredibly reassuring.</p>
+                <h1 className='text-5xl text-white font-sans '>Essences<br></br> of Life</h1>
+                <p id='banner' className='text-white text-xl mt-2 '>One of the most obvious benefits of wearing perfume is that <br></br> it neutralizes body odors and keeps us smelling fresh all day.<br></br> It also helps to boost our confidence. Knowing that we smell<br></br> good can be incredibly reassuring.</p>
             </div>
             
            

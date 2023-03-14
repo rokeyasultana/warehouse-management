@@ -5,6 +5,9 @@ import Carousel from './Carousel';
 import Products from './Product/Products';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Policy from './Policy/Policy';
+import Fragrances from './Fragrances/Fragrances';
+
 
 const Home = () => {
 
@@ -21,7 +24,9 @@ const Home = () => {
          <Carousel></Carousel>
          <Products></Products>
          <Brand></Brand>
-       
+       <Fragrances></Fragrances>
+        <Policy></Policy>
+    
         </div>
     );
 };

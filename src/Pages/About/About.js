@@ -3,10 +3,9 @@ import './About.css'
 const About = () => {
 
     return (
-        <div class="mt-7 mb-7 hero min-h-screen"
-         
-        >
-        <div class="hero-overlay bg-opacity-60" >
+        <div id='hero'  class="mt-7 mb-7 hero " >
+        <div  class="hero-overlay bg-opacity-60" >
+
         </div>
         <div class="hero-content text-center ">
           <div class="max-w-md">
@@ -15,6 +14,8 @@ const About = () => {
             
           </div>
         </div>
+
+        
       </div>
     );
 };
