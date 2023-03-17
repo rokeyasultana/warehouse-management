@@ -45,16 +45,16 @@ navigate('/')
   };
     return (
         <div data-aos="fade-up" data-aos-duration="1500" className='flex h-screen justify-center items-center'>
-        <div class="card w-96 border-2 border-secondary text-secondary shadow-xl">
-<div class="card-body">
+        <div class="card w-96 border-2 border-secondary text-white shadow-xl">
+<div class="card-body text-white">
 
-<h2 class="text-center text-secondary font-bold text-3xl">Sign up</h2>
+<h2 class="text-center font-bold text-3xl">Sign up</h2>
 
 <form onSubmit={handleSubmit(onSubmit)}>
 
 <div class="form-control w-full max-w-xs">
 <label class="label">
-<span class="label-text text-secondary">Name</span>
+<span class="label-text ">Name</span>
 
 </label>
 
@@ -80,7 +80,7 @@ message:'Name is required'
 </div>
 <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text text-secondary">Email</span>
+                                <span className="label-text ">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -104,7 +104,7 @@ message:'Name is required'
                         </div>
 <div class="form-control w-full max-w-xs">
 <label class="label">
-<span class="label-text text-secondary">Password</span>
+<span class="label-text ">Password</span>
 
 </label>
 

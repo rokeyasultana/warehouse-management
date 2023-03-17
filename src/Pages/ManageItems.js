@@ -36,7 +36,7 @@ const ManageItems = () => {
 
 
 <div class=" mt-5 mb-8">
-<div class="justify-center justify-items-center text-secondary bg-primary shadow-xl">
+<div class="justify-center justify-items-center text-white bg-primary shadow-xl">
   <div class=" overflow-x-auto 
   ">
   

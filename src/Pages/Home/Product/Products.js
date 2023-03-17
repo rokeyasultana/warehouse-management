@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../../Shared/Loading';
 import Product from './Product';
 
 const Products = () => { 
     
 const[products,setProducts] = useState([]);
 
+const [isLoading, setIsLoading] = useState(false);
+
 useEffect(()=>{
+    setIsLoading(true);
     fetch('https://warehouse-management-server-side-gmaw.onrender.com/product')
     .then(res=>res.json())
     .then(data => setProducts(data));
+    setIsLoading(false) ;
 },[]);
 
+if(isLoading)
+{
+    return <Loading></Loading>
+}
     return (
         <div className='mt-28'>
           <h2 className='justify-center justify-items-center text-6xl bg-primary text-white text-center  font-sans  mt-7'>Products</h2>

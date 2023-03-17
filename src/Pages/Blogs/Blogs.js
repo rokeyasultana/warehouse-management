@@ -7,7 +7,7 @@ const Blogs = () => {
         <h2 className='text-center text-secondary font-serif text-5xl mt-5'>FAQ</h2>
       </div>
       
-      <div className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-20 mb-35  gap-4  text-secondary '>
+      <div className='text-white justify-left justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-20 mb-35  gap-4  '>
       <div >
       <div class="card  card-compact w-96 shadow-xl border-2 border-rose-500">
   
